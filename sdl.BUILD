@@ -7,6 +7,6 @@ cc_library(
     hdrs = glob(["include/SDL2/*.h"]),
     defines = ["_REENTRANT"],
     includes = ["include/SDL2"],
-    linkopts = ["-lSDL2"],
+    linkopts = ["-L/home/zaytsev2/lustre/usr/lib -lSDL2"],
     visibility = ["//visibility:public"],
 )
