@@ -58,12 +58,12 @@ new_http_archive(
 new_local_repository(
     name = "lua_system",
     build_file = "lua.BUILD",
-    path = "/usr",
+    path = "/home/zaytsev2/lustre/usr",
 )
 new_local_repository(
     name = "sdl_system",
     build_file = "sdl.BUILD",
-    path = "/usr",
+    path = "/home/zaytsev2/lustre/usr",
 )
 new_local_repository(
     name = "python_system",
