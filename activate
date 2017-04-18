@@ -1,0 +1,8 @@
+export PATH=$PATH:~/mnt/lustre/lana/zaytsev2/usr/bin:/home/zaytsev2/lustre/deepnav/bazel-bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lustre/usr/lib:/home/zaytsev2/lustre/deepnav/bazel-bin
+export LDFLAGS="-L/home/zaytsev2/lustre/usr/lib"
+export CFLAGS="-I/home/zaytsev2/lustre/usr/include -I/home/zaytsev2/lustre/usr/include/SDL2"
+export LIBRARY_PATH=$LIBRARY_PATH:~/lustre/usr/lib:/home/zaytsev2/lustre/deepnav/bazel-bin
+export C_INCLUDE_PATH=$C_INCLUDE_PATH:~/lustre/usr/include:~/lustre/usr/include/SDL2
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:~/lustre/usr/include:~/lustre/usr/include/SDL2
+export PYTHONPATH=/mnt/lustre/lana/zaytsev2/deepnav/bazel-bin
