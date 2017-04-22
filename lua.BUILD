@@ -8,6 +8,6 @@ cc_library(
     name = "lua",
     hdrs = glob(["include/*.h"]),
     includes = ["include/"],
-    linkopts = ["-L/home/zaytsev2/lustre/usr/lib -llua"],
+    linkopts = ["-L/mnt/lustre/lana/zaytsev2/lustre/usr/lib -llua"],
     visibility = ["//visibility:public"],
 )
