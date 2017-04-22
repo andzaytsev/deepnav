@@ -706,7 +706,7 @@ cc_library(
         "-fno-strict-aliasing",
         ARCH_VAR,
         STANDALONE_VAR,
-	"-I/home/zaytsev2/lustre/usr/include",
+	"-I/mnt/lustre/lana/zaytsev2/lustre/usr/include",
     ],
     defines = [
         "BOTLIB",
@@ -942,7 +942,7 @@ config_setting(
 cc_binary(
     name = "libdmlab.so",
     linkopts = select({
-        "//conditions:default": ["-L/home/zaytsev2/lustre/usr/lib -lOSMesa"],
+        "//conditions:default": ["-L/mnt/lustre/lana/zaytsev2/lustre/usr/lib -lOSMesa"],
         ":dmlab_headless_hw": [
             "-lGL",
             "-lX11",
