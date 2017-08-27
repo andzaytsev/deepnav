@@ -1,0 +1,49 @@
+diff --git a/BUILD b/BUILD
+index 4dc6e58..05c25b6 100755
+--- a/BUILD
++++ b/BUILD
+@@ -706,7 +706,7 @@ cc_library(
+         "-fno-strict-aliasing",
+         ARCH_VAR,
+         STANDALONE_VAR,
+-	"-I/mnt/lustre/lana/zaytsev2/lustre/usr/include",
++	"-I/mnt/lustre/lana/zaytsev2/usr/include",
+     ],
+     defines = [
+         "BOTLIB",
+@@ -942,8 +942,9 @@ config_setting(
+ cc_binary(
+     name = "libdmlab.so",
+     linkopts = select({
+-        "//conditions:default": ["-L/mnt/lustre/lana/zaytsev2/lustre/usr/lib -lOSMesa"],
++        "//conditions:default": ["-L/mnt/lustre/lana/zaytsev2/usr/lib -lOSMesa"],
+         ":dmlab_headless_hw": [
++            "-L/mnt/lustre/lana/zaytsev2/usr/lib",
+             "-lGL",
+             "-lX11",
+         ],
+@@ -1039,3 +1040,24 @@ py_test(
+     main = "python/random_agent_test.py",
+     deps = [":random_agent"],
+ )
++
++py_binary(
++    name = "GA3C_LSTM_train",
++    srcs = ["GA3C_LSTM/GA3C.py"],
++    data = [":deepmind_lab.so"],
++    main = "GA3C_LSTM/GA3C.py",
++)
++
++py_binary(
++    name = "GA3C_LSTM_NAV_D_train",
++    srcs = ["GA3C_LSTM_NAV_D/GA3C.py"],
++    data = [":deepmind_lab.so"],
++    main = "GA3C_LSTM_NAV_D/GA3C.py",
++)
++
++py_binary(
++    name = "GA3C_train",
++    srcs = ["GA3C/GA3C.py"],
++    data = [":deepmind_lab.so"],
++    main = "GA3C/GA3C.py",
++)
